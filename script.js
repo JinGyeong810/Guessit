@@ -31,11 +31,15 @@ function checkGuess() {
   const attemptsSpan = document.getElementById("attemptsLeft");
   const lastGuessSpan = document.getElementById("lastGuess");
 
-  if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-    message.textContent = "올바른 숫자를 입력하세요 (1-100)!";
+  if (userGuess < 1 || userGuess > 100) {
+    message.textContent = "올바른 숫자를 입력해주세요.(1~100)";
     return;
   }
-
+  else if (isNaN(userGuess)) {
+    message.textContent = "입력란에 숫자를 입력해주세요.";
+    return;
+  }
+  
   attemptsLeft--;
   lastGuessNumber = userGuess;
 
