@@ -22,7 +22,6 @@ function newGame(){
   document.getElementById("guessInput").value = "";
   document.getElementById("attemptsLeft").textContent = attemptsLeft;
   document.getElementById("lastGuess").textContent = "지난번에 입력한 숫자: ";
-  document.getElementById("hint").textContent = "예상한 숫자가 정답보다 크면 down, 작으면 up이 출력됩니다.";
   checkGuess();
 }
 
@@ -30,9 +29,7 @@ function checkGuess() {
   const userGuess = parseInt(document.getElementById("guessInput").value);
   const message = document.getElementById("message");
   const attemptsSpan = document.getElementById("attemptsLeft");
-  const lastGuessSpan = document.getElementById("lastGuess")
-  const correctGuessesSpan = document.getElementById("correctGuesses");
-  const incorrectGuessesSpan = document.getElementById("incorrectGuesses");
+  const lastGuessSpan = document.getElementById("lastGuess");
 
   if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
     message.textContent = "올바른 숫자를 입력하세요 (1-100)!";
